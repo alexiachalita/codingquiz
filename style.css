@@ -1,0 +1,40 @@
+body {
+background: tomato;
+width: auto;
+}
+
+#bigholder {
+    height: 255px;
+    position: relative;
+    background: white;
+}
+
+#bigspace{
+height: 255px;
+width: auto;
+
+}
+
+#littlespace{
+    background: tomato;
+    width: auto;
+
+
+    }
+
+#littlespace2{
+    background: tomato;  
+    width: auto;
+      
+        }
+
+#biglittle{
+    background: yellow;     
+    width: auto;
+}
+
+.row {
+width: 100% !important;
+
+
+}
