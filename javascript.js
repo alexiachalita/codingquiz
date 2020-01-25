@@ -47,6 +47,7 @@ const bigholder = document.getElementById('bigholder');
 const input = document.getElementById('input')
 const startBtn = document.getElementById('start-btn');
 let secondsDisplay = document.querySelector('.seconds');
+
 startBtn.addEventListener('click', startGame);
 
 
@@ -97,19 +98,26 @@ function gameOver() {
     bigholder.innerHTML = `
     <h1 class="game-over">Game Over - Don't Worry You Can Try Again!</h1>
     <p>${answersCorrect} correct answer(s) out of ${questionBank.length}</p>
+    <form id="forminend">
+                        Username: <input type="text" name="User"><br>
+                        <input type="submit" value="Submit">
+                      </form>
     <button id="gameover-btn">Restart Quiz</button> 
     `;
     const gameOverBtn = document.getElementById('gameover-btn');
     gameOverBtn.addEventListener('click', startGame);
+
+    const endform = document.getElementById('forminend');
+    endform.addEventListener('click', Submit);
 }
 
 function Submit() {
     clearInterval(timerID);
     bigholder.innerHTML = `
-    <h1 class="game-over">Game Over - Don't Worry You Can Try Again!</h1>
+    <h1 class="game-over">Your high score has been submitted!</h1>
     <p>${answersCorrect} correct answer(s) out of ${questionBank.length}</p>
     <button id="gameover-btn">Restart Quiz</button> 
     `;
-
+    gameOverBtn.addEventListener('click', startGame);
 
 }
