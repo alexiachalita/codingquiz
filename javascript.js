@@ -1,4 +1,3 @@
-// Copy and paste your work, or start typing.//Questions with answers
 const questionBank = [
     {
         text: "What's the most popular pet in the US?",
@@ -99,25 +98,29 @@ function gameOver() {
     <h1 class="game-over">Game Over - Don't Worry You Can Try Again!</h1>
     <p>${answersCorrect} correct answer(s) out of ${questionBank.length}</p>
     <form id="forminend">
-                        Username: <input type="text" name="User"><br>
-                        <input type="submit" value="Submit">
-                      </form>
+        Username: <input type="text" name="User" id="username"><br>
+        <button type="submit">Submit Name</button>
+    </form>
     <button id="gameover-btn">Restart Quiz</button> 
     `;
     const gameOverBtn = document.getElementById('gameover-btn');
     gameOverBtn.addEventListener('click', startGame);
 
     const endform = document.getElementById('forminend');
-    endform.addEventListener('click', Submit);
+    endform.addEventListener('submit', Submit);
 }
 
-function Submit() {
-    clearInterval(timerID);
+function Submit(event) {
+    event.preventDefault();
+    const username = document.getElementById('username');
+    console.log(username.value, answersCorrect, ' out of ', questionBank.length);
+    //clearInterval(timerID);
     bigholder.innerHTML = `
     <h1 class="game-over">Your high score has been submitted!</h1>
     <p>${answersCorrect} correct answer(s) out of ${questionBank.length}</p>
     <button id="gameover-btn">Restart Quiz</button> 
     `;
+    const gameOverBtn = document.getElementById('gameover-btn');
     gameOverBtn.addEventListener('click', startGame);
 
 }
