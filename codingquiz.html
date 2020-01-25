@@ -7,20 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="javascript.js"></script>
-
-
 </head>
 
 <body>
-
-
-    <container>
+    <div class="container">
         <div class="row">
             <div class="col-md-12" id="bigspace">
-                    <h1>The Ultimate Cat Quiz</h1>
-
+                    <h1>Alexia's Ultimate Cat Quiz - NO CHEATING!</h1>
+                    <p>Timer: <span class="seconds">60</span> seconds</p>
             </div>
         
         <div class="row" id="biglittle">
@@ -28,14 +22,22 @@
                 </div>
 
                 <div class="col-md-8" id="bigholder">
+                    <h1 class="start-text">Welcome to the Cat Quiz. Press the Start Button to Begin!</h1>
+                    <button id="start-btn">Start Quiz</button>
+                    <form id="forminend">
+                        Username: <input type="text" name="User"><br>
+                        <input type="submit" value="Submit">
+                      </form>
                 </div>
 
                 <div class="col-md-2" id="littlespace2">
                 </div>
         </div>
         </div>
+    </div class="container">
 
-    </container>
-    
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="javascript.js"></script>
 </body>
 </html>
